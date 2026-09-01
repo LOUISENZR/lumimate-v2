@@ -28,6 +28,13 @@ class ConflictCheckerService
                 'safe_count' => 0,
                 'recommended_count' => 0,
                 'conflicts' => [],
+                'risky' => [],
+                'caution' => [],
+                'safe' => [],
+                'recommended' => [],
+                'all_conflicts' => collect(),
+                'has_retinol_and_exfoliant' => false,
+                'has_vitamin_c_and_retinol' => false,
                 'summary' => 'Jumlah bahan aktif kurang dari 2, tidak ditemukan potensi benturan.',
             ];
         }
