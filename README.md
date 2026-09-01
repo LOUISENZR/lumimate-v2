@@ -1,59 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# LumiMate
 
-## About Laravel
+**Smart Skincare Routine Planner & Tracker**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sistem pakar (Expert System) berbasis Forward Chaining yang mengubah kebingungan skincare jadi rutinitas yang aman, personal, dan konsisten.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## ✨ Kenapa LumiMate?
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Banyak orang salah urutan pakai produk, campur bahan aktif yang saling berkonflik, atau ganti-ganti rutinitas tanpa arah. LumiMate hadir sebagai "dermatolog mini" yang mengonsultasi kondisi kulitmu, lalu menyusun rutinitas skincare yang aman berdasarkan referensi ilmiah — bukan sekadar tracker biasa.
 
-## Laravel Sponsors
+## 🚀 Fitur Utama
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- 🧴 **Konsultasi Kulit** — kenali jenis kulit, masalah utama, dan sensitivitas lewat kuesioner terstruktur (diadaptasi dari Baumann Skin Type Indicator)
+- ⚠️ **Ingredient Conflict Checker** — deteksi otomatis kombinasi bahan aktif yang berisiko (mis. Retinol + AHA/BHA), lengkap dengan solusinya
+- 📅 **Routine Generator** — susun urutan layering & jadwal pagi/malam otomatis, termasuk pola *skin cycling*
+- ✅ **Daily Tracker & Streak** — pantau konsistensi rutinitas harian
+- 📊 **Progress Dashboard** — visualisasi hidrasi & konsistensi kulit dengan Chart.js
+- 🛡️ **Safety Guardrails** — peringatan otomatis untuk kondisi kehamilan, sunscreen yang terlewat, atau rutinitas yang terlalu agresif untuk pemula
 
-### Premium Partners
+## 🧠 Di Baliknya
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+LumiMate menjalankan mesin inferensi **Forward Chaining** dengan **Certainty Factor**, mencocokkan fakta kondisi kulitmu dengan rule base yang seluruhnya bersumber dari jurnal dermatologi (AAD, PubMed, Cleveland Clinic, dan lainnya) — jadi tiap rekomendasi bisa dipertanggungjawabkan.
 
-## Contributing
+> 📄 Detail metodologi, matriks konflik ingredient, struktur database, dan referensi ilmiah lengkap ada di [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🛠️ Tech Stack
 
-## Code of Conduct
+Laravel · PHP · MySQL · Blade · Tailwind CSS · Chart.js
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## ⚡ Quick Start
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/username/lumimate.git
+cd lumimate
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🗺️ Roadmap
 
-## License
+- [x] Konsultasi kulit, conflict checker, routine generator, daily tracker (MVP)
+- [ ] Notifikasi reminder & grafik konsistensi bulanan
+- [ ] AI skin analysis dari foto & chatbot konsultasi
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+<div align="center">
+
+*"Ritual Adalah Segalanya."*
+
+</div>
