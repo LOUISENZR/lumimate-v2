@@ -20,5 +20,25 @@ class DatabaseSeeder extends Seeder
             IngredientConflictSeeder::class,
             RuleSeeder::class,
         ]);
+
+        // Default Administrator
+        User::updateOrCreate(
+            ['email' => 'admin@lumimate.com'],
+            [
+                'name' => 'LumiMate Administrator',
+                'password' => bcrypt('password'),
+                'role' => 'admin',
+            ]
+        );
+
+        // Default Skincare User
+        User::updateOrCreate(
+            ['email' => 'user@lumimate.com'],
+            [
+                'name' => 'Demo User',
+                'password' => bcrypt('password'),
+                'role' => 'user',
+            ]
+        );
     }
 }
