@@ -46,4 +46,44 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function consultations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Consultation::class);
+    }
+
+    public function latestConsultation(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Consultation::class)->latestOfMany();
+    }
+
+    public function userProducts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(UserProduct::class);
+    }
+
+    public function skincareRoutines(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(SkincareRoutine::class);
+    }
+
+    public function dailyTrackers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(DailyTracker::class);
+    }
+
+    public function skinProgressLogs(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(SkinProgressLog::class);
+    }
+
+    public function getStreakAttribute(): int
+    {
+        return DailyTracker::calculateStreak($this->id);
+    }
+
+    public function getConsistencyRateAttribute(): float
+    {
+        return DailyTracker::calculateConsistencyPercentage($this->id);
+    }
 }
