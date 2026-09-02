@@ -37,14 +37,7 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        // Get authenticated user or fallback to demo user for easy preview
         $user = Auth::user();
-        if (!$user) {
-            $user = User::where('email', 'user@lumimate.com')->first() ?? User::first();
-            if ($user) {
-                Auth::login($user);
-            }
-        }
 
         // 1. Time-based Greeting
         $hour = Carbon::now()->hour;

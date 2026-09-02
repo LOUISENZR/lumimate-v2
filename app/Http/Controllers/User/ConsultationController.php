@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\ConsultationQuestion;
-use App\Models\User;
 use App\Services\ConsultationService;
 use App\Services\InferenceEngineService;
 use Illuminate\Http\Request;
@@ -21,14 +20,7 @@ class ConsultationController extends Controller
 
     public function index()
     {
-        // Get authenticated user or fallback to demo user for easy preview
         $user = Auth::user();
-        if (!$user) {
-            $user = User::where('email', 'user@lumimate.com')->first() ?? User::first();
-            if ($user) {
-                Auth::login($user);
-            }
-        }
 
         $questions = ConsultationQuestion::active()
             ->with(['activeOptions'])
@@ -42,12 +34,6 @@ class ConsultationController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        if (!$user) {
-            $user = User::where('email', 'user@lumimate.com')->first() ?? User::first();
-            if ($user) {
-                Auth::login($user);
-            }
-        }
 
         $data = $request->only([
             'a1_sebum_condition',
@@ -74,12 +60,6 @@ class ConsultationController extends Controller
     public function result()
     {
         $user = Auth::user();
-        if (!$user) {
-            $user = User::where('email', 'user@lumimate.com')->first() ?? User::first();
-            if ($user) {
-                Auth::login($user);
-            }
-        }
 
         $consultation = $user?->latestConsultation;
 

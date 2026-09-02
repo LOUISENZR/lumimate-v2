@@ -18,7 +18,9 @@ class DashboardTest extends TestCase
 
     public function test_user_dashboard_renders_successfully(): void
     {
-        $response = $this->get('/');
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get(route('user.dashboard'));
 
         $response->assertStatus(200);
         $response->assertSee('LumiMate');
