@@ -79,7 +79,7 @@
     </div>
 
     <!-- Sidebar Navigation -->
-    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-72 bg-sidebar-bg flex flex-col justify-between p-6 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:h-screen md:sticky md:top-0 border-r border-[#EFE5DE]">
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 bg-sidebar-bg flex flex-col justify-between p-6 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:h-screen md:sticky md:top-0 border-r border-[#EFE5DE]">
         <div>
             <!-- Brand Logo (centered & enlarged) -->
             <div class="mb-8 flex items-center justify-center">
@@ -87,10 +87,10 @@
             </div>
 
             <!-- Main Navigation Menu -->
-            <nav class="space-y-1.5 font-medium text-base">
+            <nav class="space-y-1.5 font-medium text-sm">
                 <!-- Dashboard (Active) -->
                 <a href="{{ route('user.dashboard') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.dashboard') ? 'bg-sidebar-active text-sceptre-red font-semibold shadow-xs' : 'text-deep-charcoal hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <rect x="3" y="3" width="7" height="7" rx="1.5" stroke-width="2"></rect>
                         <rect x="14" y="3" width="7" height="7" rx="1.5" stroke-width="2"></rect>
                         <rect x="14" y="14" width="7" height="7" rx="1.5" stroke-width="2"></rect>
@@ -101,7 +101,7 @@
 
                 <!-- Konsultasi -->
                 <a href="{{ route('user.consultation') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.consultation') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
                     <span>Konsultasi</span>
@@ -109,7 +109,7 @@
 
                 <!-- Produk Saya -->
                 <a href="{{ route('user.products') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.products') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                     </svg>
                     <span>Produk Saya</span>
@@ -117,7 +117,7 @@
 
                 <!-- Analisis Kandungan -->
                 <a href="{{ route('user.ingredient.analysis') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.ingredient.analysis') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
                     </svg>
                     <span>Analisis Kandungan</span>
@@ -125,7 +125,7 @@
 
                 <!-- Pemeriksa Konflik -->
                 <a href="{{ route('user.conflicts') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.conflicts') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                     </svg>
                     <span>Pemeriksa Konflik</span>
@@ -133,7 +133,7 @@
 
                 <!-- Perencana Rutinitas -->
                 <a href="{{ route('user.routine') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.routine') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
                     <span>Perencana Rutinitas</span>
@@ -141,7 +141,7 @@
 
                 <!-- Pelacak Harian -->
                 <a href="{{ route('user.tracker') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.tracker') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
                     </svg>
                     <span>Pelacak Harian</span>
@@ -149,7 +149,7 @@
 
                 <!-- Pemantauan Kemajuan -->
                 <a href="{{ route('user.progress') }}" class="flex items-center gap-3.5 px-4 py-2.5 rounded-full transition-all duration-200 {{ request()->routeIs('user.progress') ? 'bg-sidebar-active text-sceptre-red font-semibold' : 'text-deep-charcoal/80 hover:bg-sidebar-active/60 hover:text-sceptre-red' }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                     </svg>
                     <span>Pemantauan Kemajuan</span>
@@ -158,18 +158,10 @@
         </div>
 
         <!-- Bottom Sidebar Section -->
-        <div class="pt-6 border-t border-[#EAE0D9] space-y-1 text-base font-medium ">
-            <!-- Notifikasi -->
-            <a href="#notifikasi" class="flex items-center gap-3.5 px-4 py-2 text-deep-charcoal/75 hover:text-sceptre-red hover:bg-sidebar-active/50 rounded-lg transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                </svg>
-                <span>Notifikasi</span>
-            </a>
-
+        <div class="pt-6 border-t border-[#EAE0D9] space-y-1 text-sm font-medium ">
             <!-- Pengaturan -->
             <a href="#pengaturan" class="flex items-center gap-3.5 px-4 py-2 text-deep-charcoal/75 hover:text-sceptre-red hover:bg-sidebar-active/50 rounded-lg transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
@@ -178,7 +170,7 @@
 
             <!-- Profil -->
             <a href="#profil" class="flex items-center gap-3.5 px-4 py-2 text-deep-charcoal/75 hover:text-sceptre-red hover:bg-sidebar-active/50 rounded-lg transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                 </svg>
                 <span>Profil</span>
@@ -188,7 +180,7 @@
 
     <!-- Main Content Area -->
     <div class="flex-1 flex flex-col min-w-0">
-        <main class="flex-1 px-4 sm:px-2 py-8 md:py-10 max-w-7xl w-full mx-auto">
+        <main class="flex-1 px-4 sm:px-8 py-8 md:py-10 max-w-7xl w-full mx-auto">
             @yield('content')
         </main>
 
