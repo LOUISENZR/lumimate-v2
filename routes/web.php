@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\ConsultationController;
 use App\Http\Controllers\User\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -7,9 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('user.dashboard');
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/konsultasi', function () {
-    return redirect()->route('user.dashboard')->with('info', 'Halaman Konsultasi akan segera dimuat.');
-})->name('user.consultation');
+Route::get('/konsultasi', [ConsultationController::class, 'index'])->name('user.consultation');
+Route::post('/konsultasi', [ConsultationController::class, 'store'])->name('user.consultation.store');
+Route::get('/konsultasi/hasil', [ConsultationController::class, 'result'])->name('user.consultation.result');
 
 Route::get('/produk-saya', function () {
     return redirect()->route('user.dashboard')->with('info', 'Halaman Produk Saya akan segera dimuat.');

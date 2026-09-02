@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             IngredientSeeder::class,
             IngredientConflictSeeder::class,
             RuleSeeder::class,
+            ConsultationQuestionSeeder::class,
         ]);
 
         // Default Administrator

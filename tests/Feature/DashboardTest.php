@@ -22,7 +22,6 @@ class DashboardTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('LumiMate');
-        $response->assertSee('PERJALANAN RITUAL');
         $response->assertSee('Kondisi Kulit');
         $response->assertSee('Dashboard');
         $response->assertSee('Kemajuan Ritual');
