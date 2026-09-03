@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\User\ConsultationController;
 use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\User\ProductCollectionController;
 use Illuminate\Support\Facades\Route;
 
 // Public: Landing page
@@ -24,9 +25,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/konsultasi', [ConsultationController::class, 'store'])->name('user.consultation.store');
     Route::get('/konsultasi/hasil', [ConsultationController::class, 'result'])->name('user.consultation.result');
 
-    Route::get('/produk-saya', function () {
-        return redirect()->route('user.dashboard')->with('info', 'Halaman Produk Saya akan segera dimuat.');
-    })->name('user.products');
+    Route::get('/produk-saya', [ProductCollectionController::class, 'index'])->name('user.products');
+    Route::post('/produk-saya', [ProductCollectionController::class, 'store'])->name('user.products.store');
+    Route::delete('/produk-saya/{userProduct}', [ProductCollectionController::class, 'destroy'])->name('user.products.destroy');
+    Route::patch('/produk-saya/{userProduct}/toggle', [ProductCollectionController::class, 'toggle'])->name('user.products.toggle');
 
     Route::get('/analisis-kandungan', function () {
         return redirect()->route('user.dashboard')->with('info', 'Halaman Analisis Kandungan akan segera dimuat.');
